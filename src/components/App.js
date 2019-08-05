@@ -1,10 +1,18 @@
 import React from 'react'
 
+import axios from 'axios'
 import SearchBar from './SearchBar'
 
 class App extends React.Component {
-  onSearchSubmit(term) {
-    console.log(term)
+  state = { images: [] }
+
+  onSearchSubmit = async term => {
+    const response = await axios.get('http://localhost:3001/cars', {
+      params: { q: term },
+    })
+    this.setState({
+      images: response.data,
+    })
   }
   render() {
     return (
