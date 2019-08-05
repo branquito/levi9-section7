@@ -1,6 +1,6 @@
 import React from 'react'
 
-import carsApi from '../api/cars'
+import imagesApi from '../api/images'
 import SearchBar from './SearchBar'
 import ImageList from './ImageList'
 
@@ -8,7 +8,7 @@ class App extends React.Component {
   state = { images: [] }
 
   onSearchSubmit = async term => {
-    const response = await carsApi.get('/cars', {
+    const response = await imagesApi.get('/images', {
       params: { q: term },
     })
     this.setState({
