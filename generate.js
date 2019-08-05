@@ -6,7 +6,7 @@ module.exports = function() {
       return {
         id: n,
         name: faker.name.findName(),
-        avatar: faker.image.transport(),
+        image: faker.random.image(),
       }
     }),
   }
